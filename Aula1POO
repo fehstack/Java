@@ -1,0 +1,45 @@
+package teste;
+
+public class Carro {
+
+	String nome;
+	double capacidadeTanque;
+	
+}
+
+
+---//---
+
+
+package teste;
+
+public class Programa {
+	
+public static void main (String []args) {
+
+	Carro carro = new Carro ();
+	
+	carro.nome = "Civic";
+	carro.capacidadeTanque = 40.3;
+	
+	System.out.println("O nome do carro é " + carro.nome + 
+			"\nA capacidade do tanque é " + carro.capacidadeTanque);
+	
+	Carro carroDois = new Carro();
+	
+	carroDois.nome = "HRV";
+	carroDois.capacidadeTanque = 47.8;
+	
+	System.out.println("\nO nome do carro é " + carroDois.nome + 
+			"\nA capacidade do tanque é " + carroDois.capacidadeTanque);
+	
+	Carro carroTres = new Carro();
+	
+	carroTres.nome = "City";
+	
+	System.out.println("\nO nome do carro é " + carroTres.nome);
+	
+	
+	
+}
+}
