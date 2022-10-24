@@ -1,0 +1,119 @@
+package br.com.fiapdez.beans;
+
+public class Pessoa {
+	
+	private String nome;
+	private int idade;
+	private String endereco;
+	
+	// Construtor vazio
+	
+	public Pessoa(){
+		
+	}
+
+	
+	// Construtor que receber apenas um atributo
+	
+	public Pessoa (int recebeIdade) {
+		setIdade(recebeIdade);
+	}
+	
+	// Construtor que recebe dois parametros
+	
+	public Pessoa(String recebeNome, int recebeIdade) {
+		setNome(recebeNome);
+		setIdade(recebeIdade);
+	}
+	
+	// Construtor cheio, pois recebe mais que um atributo da classe.
+	
+	public Pessoa (String recebeNome, int recebeIdade, String recebeEndereco){
+		setNome(recebeNome);
+		setIdade(recebeIdade);
+		setEndereco(recebeEndereco);
+		
+	}
+	public int getIdade() {
+		return idade;
+	}
+
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getNome () {
+		return nome;
+	}
+}
+
+
+package br.com.fiapdez.teste;
+
+import javax.swing.JOptionPane;
+
+import br.com.fiapdez.beans.Pessoa;
+
+public class ProgramaPessoa {
+
+	public static void main(String[] args) {
+		
+		
+		// Utilizando o construtor com um parametro
+		Pessoa pessoa = new Pessoa("Rafael", 36);
+		
+		System.out.println("O nome eh: " + pessoa.getNome());
+		
+		// Utilizando o construtor cheio
+		
+		Pessoa pessoaDois = new Pessoa ("Karina", 35, "Av Lins de Vasconcelos");
+		
+		System.out.println(pessoaDois.getNome() + "/n" + pessoaDois.getIdade() + "/n" + pessoaDois.getEndereco());
+		
+		// Utilizando o construtor vazio
+		
+		Pessoa pessoaTres = new Pessoa();
+		
+		pessoaTres.setNome(JOptionPane.showInputDialog("Digite o nome"));
+		pessoaTres.setIdade(Integer.parseInt(JOptionPane.showInputDialog("Digite a idade")));
+		pessoaTres.setEndereco(JOptionPane.showInputDialog("Digite o endereco"));
+		
+		System.out.println(pessoaTres.getNome() + "/n" + pessoaTres.getIdade() + "/n" + pessoaTres.getEndereco());
+		
+		
+		// Criando o quarto objeto utilizando novamente o construtor vazio
+		
+		Pessoa pessoaQuatro = new Pessoa();
+		
+		pessoaQuatro.setNome(JOptionPane.showInputDialog("Digite o nome"));
+		pessoaQuatro.setIdade(Integer.parseInt(JOptionPane.showInputDialog("Digite a idade")));
+		pessoaQuatro.setEndereco(JOptionPane.showInputDialog("Digite o endereco"));
+		
+		
+/*			
+		pessoa.setNome(JOptionPane.showInputDialog('Digite um nome');
+		pessoa.setIdade(Integer.parseInt('Digite sua idade'));
+		pessoa.setEndereco(JOptionPane.showInputDialog('Digite seu endereco'))
+		
+*/
+		
+	}
+
+}
