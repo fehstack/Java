@@ -1,0 +1,111 @@
+package br.com.montadora.beans;
+
+public class Carro {
+
+	public String modelo;
+	public double capacidadeCombustivel;
+	public int qntJanelas;
+	
+	
+	public Carro() {
+		
+	}
+	
+	
+	public Carro(String recebeModelo) {
+		setModelo(recebeModelo);
+		
+	}
+	
+	public Carro(double recebeCapacidadeCombustivel) {
+		setCapacidadeCombustivel(recebeCapacidadeCombustivel);
+	}
+	
+	public Carro(int recebeQntJanelas) {
+		setQntJanelas(recebeQntJanelas);
+	}
+	
+	public Carro(String recebeModelo, double recebeCapacidadeCombustivel) {
+		setModelo(recebeModelo);
+		setCapacidadeCombustivel(recebeCapacidadeCombustivel);
+	}
+	
+	public Carro(String recebeModelo, double recebeCapacidadeCombustivel, int recebeQntJanelas) {
+		setModelo(recebeModelo);
+		setCapacidadeCombustivel(recebeCapacidadeCombustivel);
+		setQntJanelas(recebeQntJanelas);
+		
+	}
+	
+	
+	
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	public double getCapacidadeCombustivel() {
+		return capacidadeCombustivel;
+	}
+	public void setCapacidadeCombustivel(double capacidadeCombustivel) {
+		this.capacidadeCombustivel = capacidadeCombustivel;
+	}
+	public int getQntJanelas() {
+		return qntJanelas;
+	}
+	public void setQntJanelas(int qntJanelas) {
+		this.qntJanelas = qntJanelas;
+	}
+	
+	
+	
+}
+
+
+package br.com.montadora.teste;
+
+import javax.swing.JOptionPane;
+
+import br.com.montadora.beans.Carro;
+
+public class ProgramaCarro {
+
+	public static void main(String[] args) {
+		
+		// Utilizando o construtor cheio
+		
+		Carro carro = new Carro ("HRV", 35.5, 8);
+		
+		System.out.println("O modelo carro é: " + carro.getModelo() + "\n" + "A capacidade de combustivel é: " + carro.getCapacidadeCombustivel() + "\n" +
+							"A quantidade de janelas é: " + carro.getQntJanelas());
+		
+		
+		// Utilizando o construtor com um parametro apenas
+		
+		Carro carroDois = new Carro("HRV");
+		
+		System.out.println("\n" + "O modelo do carro é: " + carroDois.getModelo());
+		
+		// Utilizando construtor com dois parametros.
+		
+		Carro carroTres = new Carro("HRV", 35.5);
+		
+		System.out.println("\n" + "O modelo do carro é: " + carroTres.modelo + "\n" + "A capacidade de combustivel é: " + carroTres.capacidadeCombustivel);
+		
+		// Utilizando construtor vazio
+		
+		Carro carroQuatro = new Carro();
+		
+		carroQuatro.setModelo(JOptionPane.showInputDialog("Digite o modelo do carro: "));
+		carroQuatro.setCapacidadeCombustivel(Double.parseDouble(JOptionPane.showInputDialog("Digite a capacidade de combustivel: ")));
+		carroQuatro.setQntJanelas(Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de janelas: ")));
+		
+		
+		System.out.println(carroQuatro.getModelo() + "\n" + carroQuatro.getCapacidadeCombustivel() + "\n" +  carroQuatro.getQntJanelas());
+
+	}
+	
+		
+
+}
