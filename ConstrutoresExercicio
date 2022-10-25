@@ -102,10 +102,11 @@ public class ProgramaCarro {
 		carroQuatro.setQntJanelas(Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de janelas: ")));
 		
 		
-		System.out.println(carroQuatro.getModelo() + "\n" + carroQuatro.getCapacidadeCombustivel() + "\n" +  carroQuatro.getQntJanelas());
+		System.out.println("\n" + "O modelo do carro é: " + carroQuatro.getModelo() + "\n" + "A capacidade combustivel é: " +  carroQuatro.getCapacidadeCombustivel() + "\n" + "A quantidade de janelas é: " + carroQuatro.getQntJanelas());
 
 	}
 	
 		
 
 }
+
